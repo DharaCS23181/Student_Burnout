@@ -11,7 +11,7 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
+app.mount("/assets", StaticFiles(directory="static/assets"), name="assets")
 @app.get("/")
 def home():
     return {"message": "API Running"}
